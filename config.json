@@ -1,0 +1,20 @@
+{
+	"cfg" : {
+		"sass" : "sass",
+		"css" : "css",
+		"site" : "index.html",
+		"browsers" : "last 2 versions"
+	},
+	"sass" : {
+		"options" : {
+			"outputStyle" : "compressed",
+			"sourceMap": true
+		}
+	},
+	"express" : {
+		"options" : {
+			"port" : 3000,
+			"args" : ["index.html"]
+		}
+	}
+}

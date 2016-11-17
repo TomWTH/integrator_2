@@ -1,0 +1,25 @@
+{
+  "name": "test_sass",
+  "version": "0.1.0",
+  "description": "test sass",
+  "main": "Gruntfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "tom",
+  "private": true,
+  "devDependencies": {
+    "autoprefixer": "^6.5.3",
+    "bootstrap-sass": "^3.3.7",
+    "clean-css": "^3.4.21",
+    "cssnano": "^3.8.0",
+    "grunt": "^1.0.1",
+    "grunt-browser-sync": "^2.2.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-express-server": "^0.5.3",
+    "grunt-newer": "^1.2.0",
+    "grunt-postcss": "^0.8.0",
+    "grunt-sass": "^1.2.1",
+    "pixrem": "^3.0.2"
+  }
+}
