@@ -10,7 +10,7 @@ module.exports = function(grunt) {
 
 			},
 			options: {
-				cwd:'sass',
+				cwd:'<%= cfg.sass %>',
 				spawn:false,
 				interrupt:true,
 				livereload:35729, 
@@ -26,9 +26,9 @@ module.exports = function(grunt) {
 			app: {
 				files: [{
 					expand: true,
-					cwd: 'sass',
+					cwd: '<%= cfg.sass %>',
 					src: ['*.scss'],
-					dest: 'css',
+					dest: '<%= cfg.css %>',
 					ext: '.css'
 				}]
 			},
@@ -48,12 +48,12 @@ module.exports = function(grunt) {
 				]
 			},
 			dist: {
-				src: 'css/*.css'
+				src: '<%= cfg.css %>/*.css'
 			}
 		},
 		express: {
 			options: {
-				args: ['index.html'] // url de redirection par defaut, par exemple ['http://www.foo.bar']
+				args: ['<%= cfg.site %>'] // url de redirection par defaut, par exemple ['http://www.foo.bar']
 			},
 			main: {
 				options: {
@@ -65,7 +65,7 @@ module.exports = function(grunt) {
 		browserSync: {
 			dev: {
 				bsFiles: {
-					src : 'css/*.css'
+					src : '<%= cfg.css %>/*.css'
 				},
 				options: {
 					watchTask: true,
