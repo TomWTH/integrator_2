@@ -2,6 +2,8 @@
 
 module.exports = function(grunt) {
 
+
+
 	grunt.initConfig({
 		watch: {
 			sass: {
@@ -51,16 +53,6 @@ module.exports = function(grunt) {
 				src: '<%= cfg.css %>/*.css'
 			}
 		},
-		express: {
-			options: {
-				args: ['<%= cfg.site %>'] // url de redirection par defaut, par exemple ['http://www.foo.bar']
-			},
-			main: {
-				options: {
-					script: 'server.js'
-				}
-			}
-		},
 
 		browserSync: {
 			dev: {
@@ -69,8 +61,10 @@ module.exports = function(grunt) {
 				},
 				options: {
 					watchTask: true,
-					server:{
-						baseDir:"./"
+					open:"external",
+					host:"<%= cfg.host %>",
+					proxy: {
+						target: "<%= cfg.site %>"
 					}
 				}
 			}
@@ -110,11 +104,9 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-sass');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-postcss');
-	grunt.loadNpmTasks('grunt-express-server');
 	grunt.loadNpmTasks('grunt-browser-sync');
 
-	grunt.registerTask('default', ['sass', 'watch']);
-	grunt.registerTask('serve', ['express', 'default']);
-	grunt.registerTask('bs', ['browserSync', 'default']);
+	grunt.registerTask('sassWatch', ['sass', 'watch']);
+	grunt.registerTask('bs', ['browserSync', 'sassWatch']);
 
 };

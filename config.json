@@ -1,20 +1,15 @@
 {
 	"cfg" : {
 		"sass" : "sass",
-		"css" : "css",
-		"site" : "index.html",
+		"css" : "/usr/local/fastbooking/backoffice/dev/src/htdocs/backofficeng/css",
+		"host" : "backoffice-dev.localtest.me",
+		"site" : "http://backoffice-dev.localtest.me/",
 		"browsers" : "last 2 versions"
 	},
 	"sass" : {
 		"options" : {
-			"outputStyle" : "compressed",
+			"outputStyle" : "nested",
 			"sourceMap": true
-		}
-	},
-	"express" : {
-		"options" : {
-			"port" : 3000,
-			"args" : ["index.html"]
 		}
 	}
 }
